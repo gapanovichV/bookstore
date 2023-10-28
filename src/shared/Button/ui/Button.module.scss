@@ -1,7 +1,8 @@
 .button {
   border-radius: 0.25rem;
+  font: var(--font-button);
+  text-transform: uppercase;
 }
-
 
 .size {
   &_small {
