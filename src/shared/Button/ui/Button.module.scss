@@ -21,18 +21,18 @@
 
 .variant {
   &_fill{
-    background: var(--color-style-primary-base-800);
+    background: var(--color-style-primary-800);
     color: var(--color-style-primary-100);
   }
   &_line {
-    outline:  1.5px solid var(--color-style-primary-base-800);
+    outline:  1.5px solid var(--color-style-primary-800);
     outline-offset: -1.5px;
   }
   &_ghost {
-    color: var(--color-style-primary-base-800);
+    color: var(--color-style-primary-800);
   }
   &_disable {
-    background: var(--color-style-primary-base-300);
+    background: var(--color-style-primary-300);
     color: var(--color-style-primary-100)
   }
 }
