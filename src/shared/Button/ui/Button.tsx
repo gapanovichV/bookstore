@@ -22,7 +22,8 @@ interface ButtonProps {
   variantBtn: VariantButton
   sizeBtn: SizeButton,
   leftIcon?: boolean,
-  rightIcon?: boolean
+  rightIcon?: boolean,
+  onClick: React.MouseEventHandler<HTMLButtonElement>,
 }
 export const Button  = (props: ButtonProps) => {
   const {
@@ -31,15 +32,19 @@ export const Button  = (props: ButtonProps) => {
     variantBtn,
     sizeBtn,
     rightIcon,
+    onClick,
     leftIcon} = props
 
   return (
-    <button className={cn(cls.button,
-      className,
-      cls[`variant_${variantBtn}`],
-      cls[`size_${sizeBtn}`],
-      {[cls.icon_left]: leftIcon},
-      {[cls.icon_right]: rightIcon})}>
+    <button type={"button"}
+            onClick={onClick}
+            className={cn(cls.button,
+              className,
+              cls[`variant_${variantBtn}`],
+              cls[`size_${sizeBtn}`],
+              {[cls.icon_left]: leftIcon},
+              {[cls.icon_right]: rightIcon})}
+    >
       {children}
     </button>
   );

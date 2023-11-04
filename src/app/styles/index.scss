@@ -4,10 +4,13 @@
 @import "themes/dark";
 
 .app {
-  font: var(--font-m);
-  background: var(--second-bg-color);
-  color: var(--text-color);
-  min-height: 100vh;
+  font: var(--font-subtitle-3);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 85rem;
+  padding: 0 2.5rem;
 }
 
 a,
