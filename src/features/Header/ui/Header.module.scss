@@ -1,9 +1,13 @@
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1.25rem 0;
+  background: var(--color-style-primary-100);
+  border-bottom: 1px solid var(--color-style-primary-200);
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 0;
+  }
 }
 .input__group {
   margin-left: 1rem;

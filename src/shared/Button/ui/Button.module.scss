@@ -2,20 +2,40 @@
   border-radius: 0.25rem;
   font: var(--font-button);
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .size {
   &_small {
-    padding: 0.75rem 2.44rem;
+    min-width: 8.563rem;
+    max-width: 8.563rem;
+    padding: 0.75rem 2rem;
   }
   &_medium {
-    padding: 0.75rem 4.47rem;
+    min-width: 12.625rem;
+    max-width: 12.625rem;
+    padding: 0.75rem 2rem;
   }
   &_large {
-    padding: 0.75rem 7.59rem;
+    min-width: 18.875rem;
+    max-width: 18.875rem;
+    padding: 0.75rem 2rem;
   }
   &_icon {
     padding: 0.75rem;
+  }
+}
+
+.icon {
+  &_right {
+    svg {
+      margin-left: 0.5rem;
+    }
+  }
+  &_left {
+    margin-right: 5rem;
   }
 }
 

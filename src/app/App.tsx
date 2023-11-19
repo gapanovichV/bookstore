@@ -1,11 +1,9 @@
 import React from 'react'
 import {createBrowserRouter, RouterProvider,} from "react-router-dom";
-import cn from "classnames";
 import './styles/index.scss';
+import cn from "classnames";
 
-import {Main} from "pages/Main";
-import path from "path";
-
+import {Home} from "pages/Home";
 
 export enum RoutePath {
   MAIN = '/',
@@ -15,11 +13,11 @@ export enum RoutePath {
 const router = createBrowserRouter([
   {
     path: RoutePath.MAIN,
-    element: <Main/>,
+    element: <Home/>,
   },
   {
     path: RoutePath.LOGIN,
-    element: <div>LOGIHN</div>
+    element: <div>LOGIN</div>
   }
 ]);
 

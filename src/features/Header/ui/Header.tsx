@@ -16,9 +16,9 @@ interface HeaderProps {
 export const Header  = ({className}: HeaderProps) => {
   const navigate = useNavigate()
   return (
-    <header>
+    <header className={cn(cls.header)}>
       <div className={cn('container')}>
-        <nav className={cn(cls.header)}>
+        <nav className={cn(cls.header__wrapper)}>
           <Link to={RoutePath.MAIN}><Logo /></Link>
           <div className={cn(cls.input__group)}>
             <input type="text" placeholder='What book are you looking for?'/>
