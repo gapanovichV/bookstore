@@ -1,0 +1,22 @@
+.main {
+  margin: 2.56rem 0 0;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+  &__about {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1.5rem;
+    &__hero {
+      font: var(--font-hero)
+    }
+    &__subtitle {
+      margin-top: 1rem;
+      font: var(--font-bodytext-1)
+    }
+    &__btn {
+      margin-top: 1.5rem;
+    }
+  }
+}

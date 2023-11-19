@@ -9,6 +9,7 @@ export enum VariantButton {
   DISABLE = 'disable',
 
 }
+
 export enum SizeButton {
   SMALL = 'small',
   MEDIUM = 'medium',

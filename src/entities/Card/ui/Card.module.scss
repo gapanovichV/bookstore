@@ -1,0 +1,134 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  .top {
+    background-color: var(--color-style-primary-100);
+  }
+  .info {
+    padding: 0 5px;
+    &__name {
+      color: var(--color-style-primary-700);
+      font: var(--font-subtitle-1);
+    }
+    &__line {
+      margin: 0.5rem 0;
+      height: 0.125rem;
+      align-self: stretch;
+      background: var(--color-style-primary-200);
+    }
+    &__book {
+
+      &_top {
+        display: flex;
+        justify-content: space-between;
+        color: var(--color-style-primary-400);
+        font: var(--font-subtitle-4);
+      }
+      &_down {
+        gap: 1rem;
+        margin-top: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        font: var(--font-subtitle-2);
+        color: var(--color-style-primary-700);
+        p {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+      &_prise {
+        &_discont {
+          text-decoration: line-through;
+          color: var(--color-style-info-red-400);
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+  &:hover {
+    border-radius: 0.25rem;
+    background-color: var(--color-style-primary-100);
+    box-shadow: var(--drop-shadow-soft);
+  }
+
+}
+
+.size {
+  &__mobile {
+    pointer-events: none;
+    width: 10rem;
+    .top {
+      padding: 0.38rem 1.25rem;
+      img {
+        width: 100%;
+        height: 10.55513rem;
+      }
+    }
+    .info {
+      margin-top: 1rem;
+      pointer-events: none;
+      &__name {
+        font: var(--font-subtitle-3);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      &__book {
+        &_down {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          font: var(--font-subtitle-4);
+        }
+      }
+    }
+  }
+  &__small {
+    width: 9.375rem;
+    .top {
+      padding: 0.44rem 1.06rem;
+      img {
+        width: 100%;
+        height: 8.5rem;
+      }
+    }
+    .info {
+      margin-top: 0.25rem;
+      &__name {
+        text-align: center;
+        font: var(--font-subtitle-4)
+      }
+    }
+  }
+
+  &__medium {
+    width: 16.25rem;
+    .top {
+      padding: 0.56rem 1.56rem;
+      img {
+        width: 100%;
+        height: 17.25rem;
+      }
+    }
+    .info {
+      margin-top: 1rem;
+    }
+  }
+
+  &__large {
+    width: 20.125rem;
+    .top {
+      padding: 0.62rem 2.81rem;
+      img {
+        width: 100%;
+        height: 21.25rem;
+      }
+    }
+    .info {
+      margin-top: 1.5rem;
+    }
+  }
+
+}
