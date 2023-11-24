@@ -1,5 +1,6 @@
 .tabs {
   display: flex;
+  gap: 1rem;
   &_position {
     &_horizontal {
       flex-direction: row;

@@ -14,7 +14,7 @@ export type TTab = {
 
 interface TabProps {
   className?: string
-  position?: PositionTab
+  position: PositionTab
   onClick: (id: string | number) => void;
   selectedId: string | number;
   tabs: TTab[]
