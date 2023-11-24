@@ -21,11 +21,12 @@ interface ButtonProps {
   className?: string
   children: ReactNode
   variantBtn: VariantButton
-  sizeBtn: SizeButton,
-  leftIcon?: boolean,
-  rightIcon?: boolean,
-  onClick: React.MouseEventHandler<HTMLButtonElement>,
+  sizeBtn: SizeButton
+  leftIcon?: boolean
+  rightIcon?: boolean
+  onClick: React.MouseEventHandler<HTMLButtonElement>
 }
+
 export const Button  = (props: ButtonProps) => {
   const {
     className,

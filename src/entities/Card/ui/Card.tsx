@@ -16,7 +16,6 @@ interface CardProps {
   sizeCard: SizeCard
 }
 export const Card  = ({className, sizeCard}: CardProps) => {
-  // @ts-ignore
   return (
     <div className={cn(cls.card, cls[`size__${sizeCard}`],)}>
       <div className={cn(cls.top)}>
@@ -54,7 +53,6 @@ export const Card  = ({className, sizeCard}: CardProps) => {
               </div>
             </>
         }
-
       </div>
     </div>
   );

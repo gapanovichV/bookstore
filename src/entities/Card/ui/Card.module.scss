@@ -10,6 +10,11 @@
     &__name {
       color: var(--color-style-primary-700);
       font: var(--font-subtitle-1);
+      width: 100%;
+      height: 3.625rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: normal;
     }
     &__line {
       margin: 0.5rem 0;
@@ -71,9 +76,9 @@
       pointer-events: none;
       &__name {
         font: var(--font-subtitle-3);
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        width: 100%;
+        height: 2.378rem;
+
       }
       &__book {
         &_down {
@@ -98,7 +103,10 @@
       margin-top: 0.25rem;
       &__name {
         text-align: center;
-        font: var(--font-subtitle-4)
+        font: var(--font-subtitle-4);
+        width: 100%;
+        height: 1.5rem;
+        white-space: nowrap;
       }
     }
   }
