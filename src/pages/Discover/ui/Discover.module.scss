@@ -1,0 +1,11 @@
+.tabs {
+  padding: 1rem 0 0.95rem;
+  background: var(--color-style-primary-100);
+  border-bottom: var(--border-line);
+}
+
+.content {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+}

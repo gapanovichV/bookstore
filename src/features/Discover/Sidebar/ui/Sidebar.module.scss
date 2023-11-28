@@ -1,0 +1,9 @@
+.sidebar {
+  padding: 2rem 1.5rem 0 0;
+  border-right: var(--border-line);
+  &_list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

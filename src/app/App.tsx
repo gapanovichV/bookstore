@@ -4,10 +4,12 @@ import './styles/index.scss';
 import cn from "classnames";
 
 import {Home} from "pages/Home";
+import {Discover} from "pages/Discover";
 
 export enum RoutePath {
   MAIN = '/',
-  LOGIN = '/login'
+  LOGIN = '/login',
+  DISCOVER = '/discover'
 }
 
 const router = createBrowserRouter([
@@ -18,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: RoutePath.LOGIN,
     element: <div>LOGIN</div>
+  },
+  {
+    path: RoutePath.DISCOVER,
+    element: <Discover />
   }
 ]);
 

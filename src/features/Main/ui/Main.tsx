@@ -4,12 +4,15 @@ import cls from './Main.module.scss'
 import {Button, SizeButton, VariantButton} from "shared/Button";
 
 import RightArrow from 'shared/assets/icon/Right-Arrow.svg'
+import {RoutePath} from "app/App";
+import {useNavigate} from "react-router-dom";
 
 interface MainProps {
     className?: string
 }
 
 export const Main  = ({className}: MainProps) => {
+  const navigate = useNavigate()
   return (
     <section className={cn(cls.main)}>
       <div className={cn('container')}>
@@ -22,10 +25,10 @@ export const Main  = ({className}: MainProps) => {
               With us, you can shop online & help save your high street at the same time
             </p>
             <Button
+              onClick={() => navigate(RoutePath.DISCOVER)}
               className={cn(cls.main__about__btn)}
               variantBtn={VariantButton.LINE}
               sizeBtn={SizeButton.MEDIUM}
-              onClick={() => console.log(555)}
               rightIcon={true}>
               Explore Book
               <RightArrow />

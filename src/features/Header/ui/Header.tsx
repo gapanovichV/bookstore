@@ -24,7 +24,7 @@ export const Header  = ({className}: HeaderProps) => {
             <input type="text" placeholder='What book are you looking for?'/>
             <button type="button"><Search /></button>
           </div>
-          <Button onClick={() => console.log(555)} variantBtn={VariantButton.GHOST} sizeBtn={SizeButton.MEDIUM}>Discover</Button>
+          <Button onClick={() => navigate(RoutePath.DISCOVER)} variantBtn={VariantButton.GHOST} sizeBtn={SizeButton.MEDIUM}>Discover</Button>
           <Button onClick={() => navigate(RoutePath.LOGIN)} variantBtn={VariantButton.FILL} sizeBtn={SizeButton.MEDIUM}>Login</Button>
         </nav>
       </div>
