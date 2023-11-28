@@ -27,7 +27,6 @@ export const Home  = ({className}: HomeProps) => {
       <Header />
       <Main />
       <div className={cn(cls.box)}>
-        <Tab position={PositionTab.HORIZONTAL} onClick={handleTabClick} selectedId={selectedTabId} tabs={tabs} />
       </div>
     </>
   );
