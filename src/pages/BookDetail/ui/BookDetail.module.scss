@@ -1,0 +1,36 @@
+.book {
+  padding: 2rem 0;
+  &_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+  }
+  &_peak {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &_img {
+      padding: 4rem;
+      background-color: var(--color-style-primary-100);
+    }
+  }
+  &_info {
+    padding-left: 1.5rem;
+    &_title {
+      font: var(--font-header-2);
+      color: var(--color-style-primary-700);
+    }
+  }
+}
+
+.line {
+  position: relative;
+  display: inline-block;
+}:after {
+   content: " ";
+   background: var(--color-style-primary-200);
+   width: 1px;
+   height: 1000px;
+   top: -32px;
+   right: 0;
+   position: absolute;
+ }

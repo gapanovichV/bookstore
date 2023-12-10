@@ -5,11 +5,13 @@ import cn from "classnames";
 
 import {Home} from "pages/Home";
 import {Discover} from "pages/Discover";
+import {BookDetail} from "pages/BookDetail";
 
 export enum RoutePath {
   MAIN = '/',
   LOGIN = '/login',
-  DISCOVER = '/discover'
+  DISCOVER = '/discover',
+  BOOK = '/book'
 }
 
 const router = createBrowserRouter([
@@ -24,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: RoutePath.DISCOVER,
     element: <Discover />
+  },
+  {
+    path: RoutePath.BOOK,
+    element: <BookDetail />
   }
 ]);
 
