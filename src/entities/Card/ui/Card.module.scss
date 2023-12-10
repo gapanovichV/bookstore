@@ -63,7 +63,6 @@
 .size {
   &__mobile {
     pointer-events: none;
-    width: 10rem;
     .top {
       padding: 0.38rem 1.25rem;
       img {
@@ -91,7 +90,6 @@
     }
   }
   &__small {
-    width: 9.375rem;
     .top {
       padding: 0.44rem 1.06rem;
       img {
@@ -112,7 +110,6 @@
   }
 
   &__medium {
-    width: 16.25rem;
     .top {
       padding: 0.56rem 1.56rem;
       img {
@@ -126,7 +123,6 @@
   }
 
   &__large {
-    width: 20.125rem;
     .top {
       padding: 0.62rem 2.81rem;
       img {

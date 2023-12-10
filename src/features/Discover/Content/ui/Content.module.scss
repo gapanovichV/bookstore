@@ -1,3 +1,20 @@
 .content {
-  padding: 2rem 2.5rem 0 1.5rem;
+  padding: 2rem 0 2.5rem 1.5rem;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  font: var(--font-bodytext-3);
+  color: var(--color-style-primary-500)
+}
+
+.book_list {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) ;
+    gap: 2.5rem 1.5rem;
+  }
+
+.pagination {
+  margin-top: 2.5rem;
 }
