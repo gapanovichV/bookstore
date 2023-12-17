@@ -50,9 +50,9 @@
       border-radius: 0.125rem;
     }
     &_sub {
-     &::after{
-       display: none;
-     }
+      &::after{
+        display: none;
+      }
     }
 
   }
@@ -79,5 +79,3 @@
     }
   }
 }
-
-
