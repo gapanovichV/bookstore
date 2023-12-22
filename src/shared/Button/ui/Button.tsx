@@ -24,7 +24,7 @@ interface ButtonProps {
   sizeBtn: SizeButton
   leftIcon?: boolean
   rightIcon?: boolean
-  onClick: React.MouseEventHandler<HTMLButtonElement>
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 export const Button  = (props: ButtonProps) => {

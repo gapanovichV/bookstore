@@ -1,0 +1,36 @@
+.admin {
+  &_panel {
+    padding: 5rem 0;
+  }
+  &_search {
+    display: flex;
+    gap: 1rem;
+  }
+  &_input {
+    padding: 0.5rem;
+    width: 100%;
+    border: solid 1px var(--color-style-primary-500);
+  }
+
+}
+
+.card_wrapper {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem ;
+}
+
+.admin_card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2rem 0.5rem;
+  border: var(--border-line);
+  border-radius: var(--border-radius);
+  .image {
+    img {
+      width: 50px;
+      height: 70px;
+    }
+  }
+}
