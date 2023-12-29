@@ -1,15 +1,15 @@
 import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
-import { StateSchema } from './StateScheme';
-import {AdminBookReducer} from "entities/AdminBook";
+import {adminBookReducer} from "entities/AdminBook";
+import {StateSchema} from "app/providers/StoreProvider/config/StateScheme";
 
-export function createReduxStore(initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>,) {
-  const rootReducers: ReducersMapObject<StateSchema> = {
-    ...asyncReducers,
-    adminBookPanel: AdminBookReducer,
-  };
 
-  return configureStore<StateSchema>({
-    reducer: rootReducers,
-    preloadedState: initialState,
-  });
-}
+const rootReducers: ReducersMapObject<StateSchema> = {
+  adminBookPanel: adminBookReducer,
+};
+export const store = configureStore<StateSchema>({
+  reducer: rootReducers
+})
+
+export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;
+

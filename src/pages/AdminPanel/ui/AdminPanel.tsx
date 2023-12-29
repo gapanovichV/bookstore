@@ -3,17 +3,19 @@ import cn from "classnames";
 import cls from './AdminPanel.module.scss'
 import {Button, SizeButton, VariantButton} from "shared/Button";
 import Test1 from 'shared/assets/img/test1.png'
+import {useDispatch, useSelector} from "react-redux";
+import {fetchBook} from "entities/AdminBook";
+import {AppDispatch} from "app/providers/StoreProvider";
 
 interface AdminPanelProps {
     className?: string
 }
 export const AdminPanel  = ({className}: AdminPanelProps) => {
+  const dispatch = useDispatch<AppDispatch>();
   const [searchName, setSearchName] = useState('')
 
-
   const handleClickSearch = () => {
-    console.log(searchName)
-    setSearchName('')
+    dispatch(fetchBook(searchName))
   }
 
   return (

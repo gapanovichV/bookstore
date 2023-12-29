@@ -1,3 +1,3 @@
 import {AdminSchema} from "entities/AdminBook";
 
-export const getAdminBook = (state: AdminSchema) => state
+export const getAllBook = (state: AdminSchema) => state
