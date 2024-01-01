@@ -36,7 +36,7 @@ export const Tab  = (props: TabProps) => {
     insideSelectId,
     submenu,
     onClick
- } = props
+  } = props
 
   return (
     <div className={cn(cls.tabs, className, cls[`tabs_position_${position}`])}>
@@ -46,10 +46,10 @@ export const Tab  = (props: TabProps) => {
           <div className={cn(cls.tab_label, {[cls.tab_select_sub]: submenu},  {[cls.tab_select]: tab.id === selectedId})}>{tab.label}</div>
           <div className={cn(cls.submenu)}>
             {tab.submenu && tab.submenu?.map((tabs: TTabInTab) => (
-                <div  className={cn(cls.tab, {[cls.tab_select]: tabs.subId === insideSelectId && tab.id === selectedId})} key={tabs.subId}
-                      onClick={(e) => onClick(e, tab.id, tabs.subId)}>
-                  <div className={cn(cls.tab_label, {[cls.tab_select]: tabs.subId === insideSelectId && tab.id === selectedId})}>{tabs.subLabel}</div>
-                </div>
+              <div  className={cn(cls.tab, {[cls.tab_select]: tabs.subId === insideSelectId && tab.id === selectedId})} key={tabs.subId}
+                    onClick={(e) => onClick(e, tab.id, tabs.subId)}>
+                <div className={cn(cls.tab_label, {[cls.tab_select]: tabs.subId === insideSelectId && tab.id === selectedId})}>{tabs.subLabel}</div>
+              </div>
             ))
             }
           </div>

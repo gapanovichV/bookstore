@@ -6,12 +6,14 @@ import cn from "classnames";
 import {Home} from "pages/Home";
 import {Discover} from "pages/Discover";
 import {BookDetail} from "pages/BookDetail";
+import {AdminPanel} from "pages/AdminPanel";
 
 export enum RoutePath {
   MAIN = '/',
   LOGIN = '/login',
   DISCOVER = '/discover',
-  BOOK = '/book'
+  BOOK = '/book',
+  ADMIN = '/admin'
 }
 
 const router = createBrowserRouter([
@@ -30,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: RoutePath.BOOK,
     element: <BookDetail />
+  },
+  {
+    path: RoutePath.ADMIN,
+    element: <AdminPanel />
   }
 ]);
 

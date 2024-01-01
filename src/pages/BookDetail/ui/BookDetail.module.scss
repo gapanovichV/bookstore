@@ -25,12 +25,13 @@
 .line {
   position: relative;
   display: inline-block;
-}:after {
-   content: " ";
-   background: var(--color-style-primary-200);
-   width: 1px;
-   height: 1000px;
-   top: -32px;
-   right: 0;
-   position: absolute;
- }
+  &:after {
+    content: " ";
+    background: var(--color-style-primary-200);
+    width: 1px;
+    height: 1000px;
+    top: -32px;
+    right: 0;
+    position: absolute;
+  }
+}
