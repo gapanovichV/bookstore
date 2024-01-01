@@ -1,3 +1,3 @@
-import {AdminSchema} from "entities/AdminBook";
+import {StateSchema} from "app/providers/StoreProvider";
 
-export const getAllBook = (state: AdminSchema) => state
+export const getAllBook = (state: StateSchema) => state.adminBookPanel
