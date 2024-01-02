@@ -1,6 +1,6 @@
 export interface IAdminSchema {
   totalItems: BookSchema[]
-  status: string
+  status: string | unknown
 }
 
 export interface GoogleBook {
@@ -10,14 +10,14 @@ export interface GoogleBook {
 }
 
 export interface BookSchema {
-  kind: string
-  id: string
-  etag: string
-  selfLink: string
-  volumeInfo: VolumeInfo
-  saleInfo: SaleInfo
-  accessInfo: AccessInfo
-  searchInfo: SearchInfo
+  kind?: string
+  id?: string
+  etag?: string
+  selfLink?: string
+  volumeInfo?: VolumeInfo
+  saleInfo?: SaleInfo
+  accessInfo?: AccessInfo
+  searchInfo?: SearchInfo
 }
 
 export interface VolumeInfo {
