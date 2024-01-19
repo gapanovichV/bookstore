@@ -1,15 +1,15 @@
 export interface IAdminSchema {
-  totalItems: BookSchema[]
+  totalItems: BookSchemaGoogle[]
   status: string | unknown
 }
 
 export interface GoogleBook {
   kind: string
   totalItems: number
-  items: BookSchema[]
+  items: BookSchemaGoogle[]
 }
 
-export interface BookSchema {
+export interface BookSchemaGoogle {
   kind?: string
   id?: string
   etag?: string
