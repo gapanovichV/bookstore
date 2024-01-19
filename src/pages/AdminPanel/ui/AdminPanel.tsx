@@ -20,6 +20,7 @@ export const AdminPanel  = ({className}: AdminPanelProps) => {
   const handleClickSearch = () => {
     dispatch(fetchBook(searchName))
   }
+  console.log("Admin")
   return (
     <div className={cn(cls.admin_panel, className)}>
         <div className={cn('container')}>
