@@ -7,9 +7,7 @@ import {StoreProvider} from "app/providers/StoreProvider";
 const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
-  <StrictMode>
     <StoreProvider>
       <App />
     </StoreProvider>
-  </StrictMode>
 );

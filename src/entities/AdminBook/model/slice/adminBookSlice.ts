@@ -4,7 +4,7 @@ import {IAdminSchema} from "entities/AdminBook";
 import axios from "axios";
 import {GoogleBook} from "entities/AdminBook/model/types/adminBookPanel";
 
-const initialState: IAdminSchema = {totalItems: [], status: null}
+const initialState: IAdminSchema = {totalItems: [], status: ''}
 
 const API = process.env.API_GOOGLE
 const KEY = process.env.API_GOOGLE_KEY
@@ -36,7 +36,7 @@ export const AdminBookSlice = createSlice({
       state.status = 'ok';
     });
     builder.addCase(fetchBook.rejected, (state, action) => {
-      state.status = 'error';
+      state.status = action.payload
     });
   },
 });

@@ -1,23 +1,23 @@
 export interface IAdminSchema {
-  totalItems: BookSchema[]
-  status: string
+  totalItems: BookSchemaGoogle[]
+  status: string | unknown
 }
 
 export interface GoogleBook {
   kind: string
   totalItems: number
-  items: BookSchema[]
+  items: BookSchemaGoogle[]
 }
 
-export interface BookSchema {
-  kind: string
-  id: string
-  etag: string
-  selfLink: string
-  volumeInfo: VolumeInfo
-  saleInfo: SaleInfo
-  accessInfo: AccessInfo
-  searchInfo: SearchInfo
+export interface BookSchemaGoogle {
+  kind?: string
+  id?: string
+  etag?: string
+  selfLink?: string
+  volumeInfo?: VolumeInfo
+  saleInfo?: SaleInfo
+  accessInfo?: AccessInfo
+  searchInfo?: SearchInfo
 }
 
 export interface VolumeInfo {
