@@ -32,7 +32,7 @@ interface TextFieldProps {
 
 
 export const AdminModal  = ({className, book, onClose}: AdminModalProps) => {
-  const [ data, setData ] = useState<BookScheme>({
+const [ data, setData ] = useState<BookScheme>({
     id: book.id,
     title: book.volumeInfo.title,
     image: book.volumeInfo.imageLinks.thumbnail,

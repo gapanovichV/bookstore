@@ -15,7 +15,6 @@ interface HeaderProps {
 
 export const Header  = ({className}: HeaderProps) => {
   const navigate = useNavigate()
-
   return (
     <header className={cn(cls.header)}>
       <div className={cn('container')}>
