@@ -1,10 +1,10 @@
 import React from 'react'
 import {Link, useNavigate} from "react-router-dom";
+
 import cn from "classnames";
-
 import {RoutePath} from "app/App";
-import cls from './Header.module.scss'
 
+import cls from './Header.module.scss'
 import Logo from 'shared/assets/icon/Logo.svg'
 import Search from 'shared/assets/icon/Search.svg'
 import {Button, SizeButton, VariantButton} from "shared/Button";
@@ -15,7 +15,6 @@ interface HeaderProps {
 
 export const Header  = ({className}: HeaderProps) => {
   const navigate = useNavigate()
-  console.log("HEADER")
   return (
     <header className={cn(cls.header)}>
       <div className={cn('container')}>

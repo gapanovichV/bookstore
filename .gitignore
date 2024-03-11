@@ -6,7 +6,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-../../../../Downloads/SubTrack-main/yarn.lock
 node_modules
 build
 dist

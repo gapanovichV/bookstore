@@ -3,7 +3,7 @@ import cn from "classnames";
 import cls from './Home.module.scss'
 import {Header} from "features/Header";
 import {Main} from "features/Main";
-import {PositionTab, Tab, TTab} from "shared/Tab";
+import {TTab} from "shared/Tab";
 
 
 interface HomeProps {

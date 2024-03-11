@@ -1,3 +1,3 @@
 import {Tab, PositionTab, TTab} from "./ui/Tab";
 
-export {Tab, PositionTab, TTab}
+export {Tab, PositionTab, type TTab}

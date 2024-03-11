@@ -1,5 +1,25 @@
-.adminModal {
-  input {
-    border: var(--border-line);
-  }
+.title {
+  margin-bottom: 1rem;
+}
+.listGroup {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.textField {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input {
+  padding: 0.4rem;
+  border: var(--border-line);
+  border-radius: var(--border-radius);
+}
+.textarea {
+  height: 15rem;
+  display: block;
+  resize: none;
 }
