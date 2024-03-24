@@ -46,6 +46,7 @@ const [ data, setData ] = useState<BookScheme>({
   like: 0,
   createdDate: new Date().getTime()
   });
+
   const handleClickAddBook = async () => {
     //TODO: Отправка данных
     axios.post("https://63332d20433198e79dc0dd8c.mockapi.io/book", data)
