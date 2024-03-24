@@ -12,7 +12,7 @@ interface AdminModalProps {
 }
 
 export interface BookScheme {
-  id: string
+  idb: string
   title: string
   image: string
   price: number
@@ -20,6 +20,8 @@ export interface BookScheme {
   description: string
   authors: string[]
   isbn: string
+  like: number
+  createdDate: number
 }
 
 interface TextFieldProps {
@@ -33,21 +35,21 @@ interface TextFieldProps {
 
 export const AdminModal  = ({className, book, onClose}: AdminModalProps) => {
 const [ data, setData ] = useState<BookScheme>({
-    id: book.id,
-    title: book.volumeInfo.title,
-    image: book.volumeInfo.imageLinks.thumbnail,
-    price: 0,
-    quantity: 0,
-    description: book.volumeInfo.description,
-    authors: book.volumeInfo.authors,
-    isbn: book.volumeInfo.industryIdentifiers[0].identifier
-
+  idb: book.id,
+  title: book.volumeInfo.title,
+  image: book.volumeInfo.imageLinks.thumbnail,
+  price: 0,
+  quantity: 0,
+  description: book.volumeInfo.description,
+  authors: book.volumeInfo.authors,
+  isbn: book.volumeInfo.industryIdentifiers[0].identifier,
+  like: 0,
+  createdDate: new Date().getTime()
   });
+
   const handleClickAddBook = async () => {
     //TODO: Отправка данных
-    axios.post("https://63332d20433198e79dc0dd8c.mockapi.io/book", {
-      data: data,
-    })
+    axios.post("https://63332d20433198e79dc0dd8c.mockapi.io/book", data)
       .then(function (response) {
         console.log(response);
       })

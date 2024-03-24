@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import cn from "classnames";
 import cls from './AdminPanel.module.scss'
 import {Button, SizeButton, VariantButton} from "shared/Button";
-import {BookSchemaGoogle, fetchBook, getAllBook, IAdminSchema} from "entities/AdminBook";
+import {BookSchemaGoogle, fetchBook, getAdminBook, IAdminSchema} from "entities/AdminBook";
 import {AppDispatch} from "app/providers/StoreProvider";
 import {fixImage} from "shared/lib/utils/image";
 import {Modal} from "shared/Modal";
@@ -16,7 +16,7 @@ interface AdminPanelProps {
 }
 
 export const AdminPanel  = ({className}: AdminPanelProps) => {
-  const books: IAdminSchema = useSelector(getAllBook)
+  const books: IAdminSchema = useSelector(getAdminBook)
   const dispatch = useDispatch<AppDispatch>();
   const [bookInfo, setBookInfo] = useState<BookSchemaGoogle>({})
   const [openModal, setOpenModal] = useState<boolean>(false)

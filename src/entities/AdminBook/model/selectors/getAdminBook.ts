@@ -1,3 +1,3 @@
 import {StateSchema} from "app/providers/StoreProvider";
 
-export const getAllBook = (state: StateSchema) => state.adminBookPanel
+export const getAdminBook = (state: StateSchema) => state.adminBookPanel

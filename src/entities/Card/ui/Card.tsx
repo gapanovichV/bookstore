@@ -3,6 +3,7 @@ import cn from "classnames";
 import cls from './Card.module.scss'
 
 import test from 'shared/assets/img/test.png'
+import {BookSchemaApi} from "entities/AllBook";
 
 export enum SizeCard {
   SMALL = 'small',
@@ -15,15 +16,19 @@ interface CardProps {
   className?: string
   sizeCard: SizeCard
 }
-export const Card  = ({className, sizeCard}: CardProps) => {
+
+export const Card  = (props: CardProps & BookSchemaApi ) => {
+  const {className, sizeCard, title, image, price, authors} = props
+
+
   return (
     <div className={cn(cls.card, cls[`size__${sizeCard}`],)}>
       <div className={cn(cls.top)}>
-        <img src={test} alt="Book"/>
+        <img src={image} alt="Book"/>
       </div>
       <div className={cn(cls.info)}>
         <p className={cn(cls.info__name)}>
-          The Miracles of the Namiya General Store
+          {title}
         </p>
         {
           sizeCard === SizeCard.SMALL ? null :
@@ -32,9 +37,9 @@ export const Card  = ({className, sizeCard}: CardProps) => {
               <div className={cn(cls.info__book)}>
                 {sizeCard === SizeCard.MOBILE ?
                     <div className={cn(cls.info__book_down)}>
-                      <p>Keigo Higashino</p>
+                      <p>{authors[0]}</p>
                       <div className={cn(cls.info__book_prise)}>
-                        $19.0 <span className={cn(cls.info__book_prise_discont)}>$23.5</span>
+                        ${price} <span className={cn(cls.info__book_prise_discont)}></span>
                       </div>
                     </div> :
                   <>
@@ -43,9 +48,9 @@ export const Card  = ({className, sizeCard}: CardProps) => {
                       <p>Buy now</p>
                     </div>
                     <div className={cn(cls.info__book_down)}>
-                      <p>Keigo Higashino</p>
+                      <p>{authors[0]}</p>
                       <div className={cn(cls.info__book_prise)}>
-                        <span className={cn(cls.info__book_prise_discont)}>$23.5</span>$19.0
+                        <span className={cn(cls.info__book_prise_discont)}></span>${price}
                       </div>
                     </div>
                   </>
