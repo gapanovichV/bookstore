@@ -23,7 +23,7 @@ export const fetchBook = createAsyncThunk(
 );
 
 export const AdminBookSlice = createSlice({
-  name: 'admin',
+  name: 'adminBook',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -31,7 +31,6 @@ export const AdminBookSlice = createSlice({
       state.status = 'loading';
     });
     builder.addCase(fetchBook.fulfilled, (state, action: PayloadAction<GoogleBook>) => {
-      console.log("1", action.payload)
       state.totalItems = action.payload.items
       state.status = 'ok';
     });
