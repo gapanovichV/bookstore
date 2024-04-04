@@ -5,8 +5,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
+  min-width: 12.625rem;
+  max-width: 12.625rem;
+  padding: 0.75rem 2rem;
 
+}
 .size {
   &_small {
     min-width: 8.563rem;
