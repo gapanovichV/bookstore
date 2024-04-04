@@ -3,6 +3,7 @@
   &__wrapper {
     display: flex;
     align-items: center;
+    container-type: inline-size;
   }
   &__about {
     display: flex;
@@ -17,6 +18,53 @@
     }
     &__btn {
       margin-top: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .main {
+    margin: 1rem 0 0;
+    &__about {
+      &__hero {
+        font: var(--font-header-2);
+      }
+      &__subtitle {
+        font: var(--font-bodytext-2)
+      }
+    }
+    &__slider {
+      img {
+        width: 419px;
+        height: 436px;
+      }
+    }
+  }
+}
+@media (max-width: 796px) {
+  .main {
+    margin: 1rem 0 0;
+    &__wrapper {
+      flex-direction: column-reverse;
+    }
+    &__about {
+      margin: 1.5rem 0;
+      &__hero {
+        font: var(--font-header-3);
+      }
+      &__subtitle {
+        margin: 0.5rem;
+        font: var(--font-bodytext-2)
+      }
+      &__btn {
+        margin: 1.5rem 0;
+      }
+    }
+    &__slider {
+      img {
+        width: 335px;
+        height: 400px;
+      }
     }
   }
 }

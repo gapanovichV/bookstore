@@ -7,3 +7,10 @@
     gap: 2rem;
   }
 }
+
+
+@media (max-width: 796px) {
+  .sidebar {
+    display: none;
+  }
+}
