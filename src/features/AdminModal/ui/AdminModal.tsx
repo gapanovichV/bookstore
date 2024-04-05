@@ -4,6 +4,7 @@ import cls from './AdminModal.module.scss'
 import {BookSchemaGoogle} from "entities/AdminBook";
 import {Button, SizeButton, VariantButton} from "shared/Button";
 import axios from "axios";
+import {BookSchemaApi} from "entities/AllBook";
 
 interface AdminModalProps {
   className?: string
@@ -11,30 +12,18 @@ interface AdminModalProps {
   onClose: () => void
 }
 
-export interface BookScheme {
-  idb: string
-  title: string
-  image: string
-  price: number
-  quantity: number
-  description: string
-  authors: string[]
-  isbn: string
-  like: number
-  createdDate: number
-}
-
 interface TextFieldProps {
-  data: BookScheme
+  data: BookSchemaApi
   label: string
   name: string
   def: string | string[] | number
-  setData: ({}: BookScheme) => void
+  setData: ({}: BookSchemaApi) => void
 }
 
 
 export const AdminModal  = ({className, book, onClose}: AdminModalProps) => {
-const [ data, setData ] = useState<BookScheme>({
+const [ data, setData ] = useState<BookSchemaApi>({
+  id: 0,
   idb: book.id,
   title: book.volumeInfo.title,
   image: book.volumeInfo.imageLinks.thumbnail,

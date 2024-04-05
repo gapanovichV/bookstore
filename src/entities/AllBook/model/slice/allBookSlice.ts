@@ -1,4 +1,4 @@
-import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit'
+import {createAsyncThunk, createSlice, current, PayloadAction, Slice} from '@reduxjs/toolkit'
 import axios from "axios";
 import {IAllBookSchema} from "entities/AllBook";
 
@@ -21,13 +21,25 @@ export const fetchAllBook = createAsyncThunk(
 export const AllBookSlice = createSlice({
   name: 'allBook',
   initialState,
-  reducers: {},
+  reducers: {
+    popularBooks(state) {
+      state.data.sort((a, b) => b.like - a.like)
+    },
+    newBooks: (state) => {
+      console.log("new",)
+    },
+    allBooks: (state) => {
+      state.data.sort((a, b) => a.id - b.id)
+
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchAllBook.pending, (state, action) => {
       state.status = 'loading'
     })
     builder.addCase(fetchAllBook.fulfilled, (state, action) => {
       state.data = action.payload
+      console.log("ff", state.data)
       state.status = 'ok'
     })
     builder.addCase(fetchAllBook.rejected, (state, action) => {

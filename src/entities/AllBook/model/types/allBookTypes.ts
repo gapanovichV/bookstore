@@ -6,7 +6,7 @@ export interface IAllBookSchema {
 
 export interface BookSchemaApi {
   id: number
-  idb: number
+  idb: string
   title: string
   image: string
   price: number
@@ -14,4 +14,6 @@ export interface BookSchemaApi {
   description: string
   authors: string[]
   isbn: string
+  like: number
+  createdDate: number
 }
