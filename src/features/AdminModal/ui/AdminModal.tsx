@@ -37,7 +37,6 @@ const [ data, setData ] = useState<BookSchemaApi>({
   });
 
   const handleClickAddBook = async () => {
-    //TODO: Отправка данных
     axios.post("https://63332d20433198e79dc0dd8c.mockapi.io/book", data)
       .then(function (response) {
         console.log(response);

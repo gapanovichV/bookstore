@@ -22,6 +22,7 @@ export const AdminPanel  = ({className}: AdminPanelProps) => {
   const [openModal, setOpenModal] = useState<boolean>(false)
   const [searchName, setSearchName] = useState<string>('')
 
+  console.log(bookInfo)
   const handleClickSearch = () => dispatch(fetchBook(searchName))
   const handleCloseModal = () => setOpenModal(false)
 

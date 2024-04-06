@@ -15,6 +15,7 @@ export enum SizeCard {
 interface CardProps {
   className?: string
   sizeCard: SizeCard
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 export const Card  = (props: CardProps & BookSchemaApi ) => {
