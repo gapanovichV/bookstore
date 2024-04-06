@@ -4,7 +4,10 @@ import cls from './Content.module.scss'
 import {Card, SizeCard} from "entities/Card";
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch} from "app/providers/StoreProvider";
-import {BookSchemaApi, fetchAllBook, getAllBook, IAllBookSchema} from "entities/AllBook";
+import {fetchAllBook, getAllBook, IAllBookSchema} from "entities/AllBook";
+import {Link, NavLink, useNavigate} from "react-router-dom";
+import {RoutePath} from "app/App";
+
 
 interface ContentProps {
     className?: string
@@ -26,7 +29,9 @@ export const Content  = ({className}: ContentProps) => {
       <div className={cn(cls.book_list)}>
         {
           books.data.map(el => (
-            <Card key={el.idb} {...el} sizeCard={SizeCard.LARGE}/>
+            <NavLink key={el.idb} to={`${RoutePath.BOOK}/${el.idb}`}>
+              <Card  {...el} sizeCard={SizeCard.LARGE}/>
+            </NavLink>
           ))
         }
       </div>

@@ -15,8 +15,10 @@ select {
   outline: none;
 }
 
+a,
 li,
 ul,
 ol {
+  text-decoration: none;
   list-style-type: none;
 }

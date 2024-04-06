@@ -12,7 +12,7 @@ export enum RoutePath {
   MAIN = '/',
   LOGIN = '/login',
   DISCOVER = '/discover',
-  BOOK = '/book',
+  BOOK = '/discover/book',
   ADMIN = '/admin'
 }
 
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
     element: <Discover />
   },
   {
-    path: RoutePath.BOOK,
+    path: `${RoutePath.BOOK}/:id`,
     element: <BookDetail />
   },
   {
