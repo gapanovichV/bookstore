@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 
 import {Header} from "features/Header";
 import {Sidebar} from "features/Discover/Sidebar";
@@ -9,7 +9,7 @@ import cls from './Discover.module.scss'
 import {PositionTab, Tab, TTab} from "shared/Tab";
 import {useDispatch} from "react-redux";
 import {AppDispatch} from "app/providers/StoreProvider";
-import {AllBookSlice} from "entities/AllBook";
+import {AllBookSlice, fetchAllBook} from "entities/AllBook";
 
 interface DiscoverProps {
     className?: string
@@ -37,7 +37,6 @@ export const Discover  = ({className}: DiscoverProps) => {
         dispatch(AllBookSlice.actions.popularBooks())
         break
       default:
-        console.log('def')
     }
   }
   return (

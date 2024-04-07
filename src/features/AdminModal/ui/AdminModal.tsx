@@ -5,6 +5,7 @@ import {BookSchemaGoogle} from "entities/AdminBook";
 import {Button, SizeButton, VariantButton} from "shared/Button";
 import axios from "axios";
 import {BookSchemaApi} from "entities/AllBook";
+import {fixImage} from "shared/lib/utils/image";
 
 interface AdminModalProps {
   className?: string
@@ -26,7 +27,7 @@ const [ data, setData ] = useState<BookSchemaApi>({
   id: 0,
   idb: book.id,
   title: book.volumeInfo.title,
-  image: book.volumeInfo.imageLinks.thumbnail,
+  image: fixImage(book.volumeInfo.imageLinks.thumbnail),
   price: 0,
   quantity: 0,
   description: book.volumeInfo.description,

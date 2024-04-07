@@ -9,24 +9,3 @@
     padding: 1.25rem 0;
   }
 }
-.input__group {
-  margin-left: 1rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  border: var(--border-line);
-
-  input {
-    font: var(--font-bodytext-3);
-    width: 100%;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  button {
-    margin-left: 1.5rem;
-  }
-}
