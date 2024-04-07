@@ -18,6 +18,8 @@ export const fetchAllBook = createAsyncThunk(
   },
 );
 
+
+
 export const AllBookSlice = createSlice({
   name: 'allBook',
   initialState,
@@ -30,24 +32,6 @@ export const AllBookSlice = createSlice({
     },
     allBooks: (state) => {
       state.data.sort((a, b) => a.id - b.id)
-    },
-    viewingBook: (state, action: PayloadAction<string>) => {
-      // state.data.map((book: BookSchemaApi) =>
-      //   book.idb === action.payload ? {...book, like: book.like++}: book)
-      const book: BookSchemaApi[] = state.data.filter((el) => el.idb == action.payload)
-
-
-      console.log(current(book[0]))
-
-
-
-      // axios.put("https://63332d20433198e79dc0dd8c.mockapi.io/book", state)
-      //   .then(function (response) {
-      //     console.log(response);
-      //   })
-      //   .catch(function (error) {
-      //     console.log(error);
-      //   });
     }
   },
   extraReducers: (builder) => {
@@ -56,11 +40,10 @@ export const AllBookSlice = createSlice({
     })
     builder.addCase(fetchAllBook.fulfilled, (state, action) => {
       state.data = action.payload
-      console.log("ff", state.data)
       state.status = 'ok'
     })
     builder.addCase(fetchAllBook.rejected, (state, action) => {
-      console.log("r", action.payload)
+      console.log("rejected", action.payload)
     });
   },
 })

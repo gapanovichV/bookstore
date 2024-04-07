@@ -1,0 +1,26 @@
+.input {
+  &__group {
+    width: 100%;
+    position: relative;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: var(--border-line);
+  input {
+    font: var(--font-bodytext-3);
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  button {
+    margin-left: 1.5rem;
+  }
+}
+
+.dropdown {
+  position: absolute;
+}
