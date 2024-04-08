@@ -15,12 +15,38 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-
   button {
     margin-left: 1.5rem;
   }
 }
 
+.show__result {
+  border-radius: 0.25rem 0.25rem 0 0;
+  border-width: 2px 2px 0 2px;
+  border-bottom: 2px solid transparent;
+}
+
 .dropdown {
   position: absolute;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  border: var(--border-line);
+  border-radius: 0 0 0.25rem 0.25rem;
+  border-width: 0 2px 2px 2px;
+  background: var(--color-style-primary-100);
+  &__line {
+    border-top: var(--border-line);
+    margin: 0 0.8rem;
+  }
+  &__card {
+    color: var(--text-color);
+    padding: 0.25rem 1rem;
+    font: var(--font-bodytext-3);
+    &:hover {
+      background: var(--color-style-primary-200);
+    }
+  }
 }

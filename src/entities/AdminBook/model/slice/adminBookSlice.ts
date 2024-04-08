@@ -1,5 +1,5 @@
 import * as process from "process";
-import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {createAsyncThunk, createSlice, PayloadAction, Slice} from '@reduxjs/toolkit';
 import {IAdminSchema} from "entities/AdminBook";
 import axios from "axios";
 import {GoogleBook} from "entities/AdminBook/model/types/adminBookPanel";
@@ -22,12 +22,12 @@ export const fetchBook = createAsyncThunk(
   },
 );
 
-export const AdminBookSlice = createSlice({
+export const AdminBookSlice= createSlice({
   name: 'adminBook',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchBook.pending, (state, action) => {
+    builder.addCase(fetchBook.pending, (state) => {
       state.status = 'loading';
     });
     builder.addCase(fetchBook.fulfilled, (state, action: PayloadAction<GoogleBook>) => {
