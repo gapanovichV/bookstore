@@ -34,6 +34,11 @@ const [ data, setData ] = useState<BookSchemaApi>({
   authors: book.volumeInfo.authors,
   isbn: book.volumeInfo.industryIdentifiers[0].identifier,
   like: 0,
+  publishedDate: book.volumeInfo.publishedDate,
+  pageCount: book.volumeInfo.pageCount,
+  language: book.volumeInfo.language,
+  publisher: book.volumeInfo.publisher,
+  categories: book.volumeInfo.categories,
   createdDate: new Date().getTime()
   });
 

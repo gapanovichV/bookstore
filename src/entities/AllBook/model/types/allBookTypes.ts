@@ -16,4 +16,9 @@ export interface BookSchemaApi {
   isbn: string
   like: number
   createdDate: number
+  publishedDate: string
+  pageCount: number
+  language: string
+  publisher: string
+  categories: string[]
 }

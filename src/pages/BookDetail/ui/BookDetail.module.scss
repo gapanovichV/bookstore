@@ -19,9 +19,34 @@
   }
   &_info {
     padding-left: 1.5rem;
+    &_author {
+      font: var(--font-subtitle-2);
+      color: var(--color-style-primary-500);
+    }
     &_title {
+      margin-top: 1rem;
       font: var(--font-header-2);
       color: var(--color-style-primary-700);
+    }
+    &_price {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: flex-end;
+      font: var(--font-header-3);
+      color: var(--color-style-primary-700);
+    }
+    &_line {
+      margin-top: 1.5rem;
+      border-top: var(--border-line);
+    }
+    &_infoProduct {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem 0.7rem;
+    }
+    &_categories {
+      margin-top: 1.5rem;
     }
   }
 }
@@ -37,5 +62,19 @@
     top: -32px;
     right: 0;
     position: absolute;
+  }
+}
+
+.infoProduct {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  &_label {
+    font: var(--font-subtitle-4);
+    color: var(--color-style-primary-500);
+  }
+  &_value {
+    font: var(--font-subtitle-2);
+    color: var(--color-style-primary-700);
   }
 }
