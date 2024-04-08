@@ -1,6 +1,6 @@
 import {createAsyncThunk, createSlice, current, PayloadAction, Slice} from '@reduxjs/toolkit'
 import axios from "axios";
-import {BookSchemaApi, IAllBookSchema} from "entities/AllBook";
+import {IAllBookSchema} from "entities/AllBook";
 
 
 const initialState: IAllBookSchema = {data: [], status: '', id: 0}
@@ -20,11 +20,11 @@ export const fetchAllBook = createAsyncThunk(
 
 
 
-export const AllBookSlice = createSlice({
+export const AllBookSlice= createSlice({
   name: 'allBook',
   initialState,
   reducers: {
-    popularBooks(state) {
+    popularBooks: (state) => {
       state.data.sort((a, b) => b.like - a.like)
     },
     newBooks: (state) => {

@@ -7,13 +7,15 @@ import {Home} from "pages/Home";
 import {Discover} from "pages/Discover";
 import {BookDetail} from "pages/BookDetail";
 import {AdminPanel} from "pages/AdminPanel";
+import {Cart} from "pages/Cart";
 
 export enum RoutePath {
   MAIN = '/',
   LOGIN = '/login',
   DISCOVER = '/discover',
   BOOK = '/discover/book',
-  ADMIN = '/admin'
+  ADMIN = '/admin',
+  CART = '/cart'
 }
 
 const router = createBrowserRouter([
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: RoutePath.ADMIN,
     element: <AdminPanel />
+  },
+  {
+    path: RoutePath.CART,
+    element: <Cart />
   }
 ]);
 
