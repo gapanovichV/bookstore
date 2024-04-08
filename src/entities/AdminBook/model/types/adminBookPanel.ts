@@ -24,6 +24,7 @@ export interface VolumeInfo {
   title: string
   subtitle: string
   authors: string[]
+  publisher: string
   publishedDate: string
   description: string
   industryIdentifiers: IndustryIdentifier[]
