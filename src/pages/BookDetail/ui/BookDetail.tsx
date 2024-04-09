@@ -8,6 +8,8 @@ import {BookSchemaApi, getAllBook, IAllBookSchema} from "entities/AllBook";
 import {useSelector} from "react-redux";
 import {countries} from "shared/lib/utils/countries";
 import dateFormat from "dateformat";
+import Plus from 'shared/assets/icon/Plus.svg'
+import Minus from 'shared/assets/icon/Minus.svg'
 
 interface BookDetailProps {
     className?: string
@@ -21,6 +23,7 @@ interface InfoProductProps {
 export const BookDetail  = ({className}: BookDetailProps) => {
   const idParams = useParams().id
   const AllBooks: IAllBookSchema = useSelector(getAllBook)
+  const [countProduct, setCountProduct] = useState<number>(1)
   const book: BookSchemaApi[] = AllBooks.data.filter((el: BookSchemaApi) => el.idb == idParams)
 
   let {id, authors,
@@ -28,7 +31,7 @@ export const BookDetail  = ({className}: BookDetailProps) => {
     description, image,
     price, like,
     pageCount, language, publishedDate,
-    publisher, categories} = book[0]
+    publisher, categories, quantity} = book[0]
 
   useEffect(() => {
     axios.put(`https://63332d20433198e79dc0dd8c.mockapi.io/book/${id}`, {like: ++like})
@@ -36,6 +39,15 @@ export const BookDetail  = ({className}: BookDetailProps) => {
       .catch();
   }, []);
 
+  const handleClickMinus = () => {
+    if (countProduct === 1) return
+    setCountProduct(countProduct - 1)
+  }
+
+  const handleClickPus = () => {
+    if (countProduct >= quantity) return
+    setCountProduct(countProduct + 1 )
+  }
   return (
     <>
       <Header />
@@ -64,6 +76,18 @@ export const BookDetail  = ({className}: BookDetailProps) => {
                 <InfoProduct label={"Number of pages"} value={pageCount} />
               </div>
               <InfoProduct className={cn(cls.book_info_categories)} label={"Categories"} value={(categories && categories.join(', ')) ?? ""}/>
+              <div className={cn(cls.book_info_product)}>
+                <InfoProduct className={cn(cls.book_info_product)} label={"Stock"} value={quantity} />
+                <div className={cn(cls.book_info_product_count)}>
+                  <div className={cn(cls.book_info_product_count_label, cls.label)}>Add Product</div>
+                  <div className={cn(cls.book_info_product_count_value)}>
+                    <button onClick={handleClickMinus} className={cn(cls.count_btn)}><Minus/></button>
+                    <div className={cn(cls.count)}>{countProduct}</div>  {/* TODO: Change to input */}
+                    <button onClick={handleClickPus} className={cn(cls.count_btn)}><Plus/></button>
+                  </div>
+                </div>
+                <InfoProduct className={cn(cls.book_info_product)} label={"Total Price"} value={`$${countProduct * price}`} />
+              </div>
             </div>
           </div>
         </div>
@@ -76,8 +100,8 @@ export const BookDetail  = ({className}: BookDetailProps) => {
 export const InfoProduct = ({label, value, className}: InfoProductProps) => {
   return (
     <div className={cn(cls.infoProduct, className)}>
-      <div className={cn(cls.infoProduct_label)}>{label}</div>
-      <div className={cn(cls.infoProduct_value)}>{value}</div>
+      <div className={cn(cls.infoProduct_label, cls.label)}>{label}</div>
+      <div className={cn(cls.infoProduct_value, cls.value)}>{value}</div>
     </div>
   )
 }
