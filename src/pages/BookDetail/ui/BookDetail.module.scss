@@ -47,6 +47,34 @@
     }
     &_categories {
       margin-top: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    &_product {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr 2fr;
+      gap: 2rem;
+      &_count {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        &_value {
+          display: flex;
+          border: var(--border-line);
+          border-radius: var(--border-radius);
+          padding: 0.625rem 0.5rem;
+          justify-content: space-between;
+          align-items: center;
+          .count {
+            font: var(--font-subtitle-3);
+            color: var(--color-style-primary-800)
+
+          }
+        }
+      }
+      .value {
+        font: var(--font-header-3);
+        color: var(--color-style-primary-700);
+      }
     }
   }
 }
@@ -69,12 +97,13 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  &_label {
-    font: var(--font-subtitle-4);
-    color: var(--color-style-primary-500);
-  }
   &_value {
     font: var(--font-subtitle-2);
     color: var(--color-style-primary-700);
   }
+}
+
+.label {
+  font: var(--font-subtitle-4);
+  color: var(--color-style-primary-500);
 }

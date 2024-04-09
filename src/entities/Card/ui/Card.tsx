@@ -1,8 +1,6 @@
 import React from 'react'
 import cn from "classnames";
 import cls from './Card.module.scss'
-
-import test from 'shared/assets/img/test.png'
 import {BookSchemaApi} from "entities/AllBook";
 
 export enum SizeCard {
