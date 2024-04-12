@@ -5,5 +5,5 @@ import {ICartScheme} from "entities/Cart";
 export interface StateSchema {
   adminBookPanel: IAdminSchema;
   allBook: IAllBookSchema;
-  cart: ICartScheme
+  cartBook: ICartScheme
 }

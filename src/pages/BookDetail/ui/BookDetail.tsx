@@ -5,11 +5,17 @@ import cls from './BookDetail.module.scss'
 import {Header} from "features/Header";
 import {useParams} from "react-router-dom";
 import {BookSchemaApi, getAllBook, IAllBookSchema} from "entities/AllBook";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {countries} from "shared/lib/utils/countries";
 import dateFormat from "dateformat";
-import Plus from 'shared/assets/icon/Plus.svg'
+import {Button, SizeButton, VariantButton} from "shared/Button";
 import Minus from 'shared/assets/icon/Minus.svg'
+import Plus from 'shared/assets/icon/Plus.svg'
+import Cart from 'shared/assets/icon/Cart.svg'
+import {AppDispatch, StateSchema} from 'app/providers/StoreProvider';
+import {ThunkDispatch} from "@reduxjs/toolkit";
+import {CartSlice} from "entities/Cart";
+
 
 interface BookDetailProps {
     className?: string
@@ -21,12 +27,13 @@ interface InfoProductProps {
   value: string | number | string[]
 }
 export const BookDetail  = ({className}: BookDetailProps) => {
+  const dispatch = useDispatch<AppDispatch>();
   const idParams = useParams().id
   const AllBooks: IAllBookSchema = useSelector(getAllBook)
   const [countProduct, setCountProduct] = useState<number>(1)
   const book: BookSchemaApi[] = AllBooks.data.filter((el: BookSchemaApi) => el.idb == idParams)
 
-  let {id, authors,
+  let {id, authors, idb,
     title, isbn,
     description, image,
     price, like,
@@ -48,6 +55,12 @@ export const BookDetail  = ({className}: BookDetailProps) => {
     if (countProduct >= quantity) return
     setCountProduct(countProduct + 1 )
   }
+  const handleClickAddBook = (idb: string) => {
+    const priceAllBook = countProduct * price
+    dispatch(CartSlice.actions.addBookToCart({idb, countProduct, priceAllBook}))
+    setCountProduct(1)
+  }
+
   return (
     <>
       <Header />
@@ -88,6 +101,7 @@ export const BookDetail  = ({className}: BookDetailProps) => {
                 </div>
                 <InfoProduct className={cn(cls.book_info_product)} label={"Total Price"} value={`$${countProduct * price}`} />
               </div>
+              <Button className={cn(cls.book_info_addBook)} onClick={() => handleClickAddBook(idb)} rightIcon={true} variantBtn={VariantButton.FILL} sizeBtn={SizeButton.MEDIUM}>GET BOOK <Cart/></Button>
             </div>
           </div>
         </div>

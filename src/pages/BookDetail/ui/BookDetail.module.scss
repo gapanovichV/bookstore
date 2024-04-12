@@ -19,6 +19,9 @@
   }
   &_info {
     padding-left: 1.5rem;
+    &_addBook {
+      margin-top: 2rem;
+    }
     &_author {
       font: var(--font-subtitle-2);
       color: var(--color-style-primary-500);
@@ -76,6 +79,7 @@
         color: var(--color-style-primary-700);
       }
     }
+
   }
 }
 
