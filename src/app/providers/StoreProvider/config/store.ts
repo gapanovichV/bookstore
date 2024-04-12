@@ -8,7 +8,7 @@ import {cartReducer} from "entities/Cart";
 const rootReducers: ReducersMapObject<StateSchema> = {
   adminBookPanel: adminBookReducer,
   allBook: allBookReducer,
-  cart: cartReducer
+  cartBook: cartReducer
 };
 export const store = configureStore<StateSchema>({
   reducer: rootReducers

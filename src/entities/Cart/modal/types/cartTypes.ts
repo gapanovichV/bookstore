@@ -2,13 +2,8 @@ export interface ICartScheme {
   cart: BookCartScheme[]
 }
 
-interface BookCartScheme {
-  id: number
+export interface BookCartScheme {
   idb: string
-  title: string
-  image: string
-  price: number
-  quantity: number
-  isbn: string
-  count: number
+  countProduct: number
+  priceAllBook: number
 }
