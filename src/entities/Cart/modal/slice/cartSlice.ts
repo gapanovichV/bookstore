@@ -20,7 +20,7 @@ export const CartSlice  = createSlice({
         bookInCart.priceAllBook = bookInCart.priceAllBook + priceAllBook;
       }
       else {
-        state.cart.push({idb, countProduct: countProduct, priceAllBook})
+        state.cart.push({idb, countProduct, priceAllBook})
       }
 
       localStorage.setItem(LOCAL_STORAGE_CART_KEY, JSON.stringify(state.cart));
