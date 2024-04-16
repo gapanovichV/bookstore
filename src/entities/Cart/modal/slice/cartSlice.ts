@@ -11,7 +11,7 @@ export const CartSlice  = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    addBookToCart: (state, actions: {payload: {idb: string, countProduct: number, priceAllBook: number}}) => {
+    addBookToCart: (state, actions: PayloadAction<{idb: string, countProduct: number, priceAllBook: number}>) => {
       const {idb,countProduct, priceAllBook} = actions.payload;
       const bookInCart = state.cart.find((item) => item.idb === idb);
 
@@ -20,7 +20,7 @@ export const CartSlice  = createSlice({
         bookInCart.priceAllBook = bookInCart.priceAllBook + priceAllBook;
       }
       else {
-        state.cart.push({idb, countProduct: countProduct, priceAllBook})
+        state.cart.push({idb, countProduct, priceAllBook})
       }
 
       localStorage.setItem(LOCAL_STORAGE_CART_KEY, JSON.stringify(state.cart));

@@ -90,7 +90,7 @@
     content: " ";
     background: var(--color-style-primary-200);
     width: 1px;
-    height: 1000px;
+    min-height: 100vh - 20vh;
     top: -32px;
     right: 0;
     position: absolute;

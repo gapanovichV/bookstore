@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import cn from "classnames";
 import cls from './SearchInput.module.scss'
 import Search from "shared/assets/icon/Search.svg";
@@ -12,6 +12,7 @@ interface SearchInput {
 }
 
 export const SearchInput  = ({className}: SearchInput) => {
+  const inputRef = useRef<HTMLInputElement>(null);
   const books: IAllBookSchema = useSelector(getAllBook)
   const [searchText, setSearchText] = useState<string>("");
   const [results, setResults] = useState<BookSchemaApi[]>([])
@@ -22,9 +23,12 @@ export const SearchInput  = ({className}: SearchInput) => {
     setSearchText(value)
   }
 
+  const handleClickButtonFocus = () => {
+    inputRef.current.focus()
+  }
+
   const searchBook = (searchText: string): BookSchemaApi[] => {
     if (!searchText.trim()) return []
-
     return books.data.filter((book) =>
       book.title.toLowerCase().includes(searchText.toLowerCase()))
   }
@@ -46,8 +50,8 @@ export const SearchInput  = ({className}: SearchInput) => {
   return (
     <div className={cn(cls.input__group)}>
       <div className={cn(cls.input, {[cls.show__result]: showResults})}>
-        <input value={searchText} onChange={handleChange} type="text" placeholder='What book are you looking for?'/>
-        <button type="button"><Search/></button>
+        <input ref={inputRef} value={searchText} onChange={handleChange} type="text" placeholder='What book are you looking for?'/>
+        <button onClick={handleClickButtonFocus} type="button"><Search/></button>
       </div>
       {
         showResults &&

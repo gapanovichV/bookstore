@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {createBrowserRouter, RouterProvider,} from "react-router-dom";
 import './styles/index.scss';
 import cn from "classnames";
@@ -8,6 +8,9 @@ import {Discover} from "pages/Discover";
 import {BookDetail} from "pages/BookDetail";
 import {AdminPanel} from "pages/AdminPanel";
 import {Cart} from "pages/Cart";
+import {useDispatch} from "react-redux";
+import {AppDispatch} from "app/providers/StoreProvider";
+import {fetchAllBook} from "entities/AllBook";
 
 export enum RoutePath {
   MAIN = '/',
@@ -46,6 +49,12 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    dispatch(fetchAllBook())
+  }, []);
+
   return (
     <div id={'app'} className={cn('app')}>
       <RouterProvider router={router} />
