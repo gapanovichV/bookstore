@@ -21,4 +21,6 @@ export interface BookSchemaApi {
   language: string
   publisher: string
   categories: string[]
+  priceInCart?: number
+  countInCart?: number
 }

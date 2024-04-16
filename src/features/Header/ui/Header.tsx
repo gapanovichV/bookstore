@@ -23,7 +23,7 @@ export const Header  = ({className}: HeaderProps) => {
           <Link to={RoutePath.MAIN}><Logo /></Link>
           <SearchInput/>
           <Button onClick={() => navigate(RoutePath.DISCOVER)} variantBtn={VariantButton.GHOST} sizeBtn={SizeButton.MEDIUM}>Discover</Button>
-          <Button onClick={() => navigate(RoutePath.LOGIN)} variantBtn={VariantButton.FILL} sizeBtn={SizeButton.MEDIUM}>Login</Button>
+          <Button onClick={() => navigate(RoutePath.CART)} variantBtn={VariantButton.FILL} sizeBtn={SizeButton.MEDIUM}>Login</Button>
         </nav>
       </div>
     </header>

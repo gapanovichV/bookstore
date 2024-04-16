@@ -1,6 +1,7 @@
 .header {
   background: var(--color-style-primary-100);
   border-bottom: var(--border-line);
+  max-height: var(--header-height);
   &__wrapper {
     display: flex;
     align-items: center;
