@@ -56,6 +56,8 @@ export const BookDetail  = ({className}: BookDetailProps) => {
     setCountProduct(countProduct + 1 )
   }
   const handleClickAddBook = (idb: string) => {
+    if (quantity === 0) return
+
     const priceAllBook = countProduct * price
     dispatch(CartSlice.actions.addBookToCart({idb, countProduct, priceAllBook}))
     setCountProduct(1)

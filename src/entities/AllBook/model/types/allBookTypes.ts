@@ -1,6 +1,6 @@
 export interface IAllBookSchema {
-  id: number
   status: string
+  error: string
   data: BookSchemaApi[]
 }
 
