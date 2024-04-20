@@ -29,6 +29,8 @@ export const Cart  = ({className}: CartProps) => {
     setBooksInCart(result)
   }
 
+  console.log("@cart", cartBooks, allBooks)
+
   useEffect( () => {
     concatCartBookInfo(cartBooks, allBooks)
   }, [allBooks.status]);

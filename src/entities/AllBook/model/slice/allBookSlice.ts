@@ -1,24 +1,26 @@
-import {createAsyncThunk, createSlice, current, PayloadAction, Slice} from '@reduxjs/toolkit'
+import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
 import axios from "axios";
 import {IAllBookSchema} from "entities/AllBook";
 
 
-const initialState: IAllBookSchema = {data: [], status: '', id: 0}
+const initialState: IAllBookSchema = {data: [], status: '', error: null}
 
 export const fetchAllBook = createAsyncThunk(
   'admin/fetchAllBook',
-  async (_, { rejectWithValue })=> {
+  async (currentPage: number , { rejectWithValue })=> {
     try {
-      const res = await axios.get(
-        `https://63332d20433198e79dc0dd8c.mockapi.io/book`);
+      const res = await axios.get(`https://63332d20433198e79dc0dd8c.mockapi.io/book`, {
+        params: {
+          page: currentPage,
+          limit: 5
+        }
+      });
       return res.data
     } catch (error) {
       return rejectWithValue(error.message);
     }
   },
 );
-
-
 
 export const AllBookSlice= createSlice({
   name: 'allBook',
@@ -27,7 +29,7 @@ export const AllBookSlice= createSlice({
     popularBooks: (state) => {
       state.data.sort((a, b) => b.like - a.like)
     },
-    newBooks: (state) => {
+    newBooks: () => {
       console.log("new",)
     },
     allBooks: (state) => {
@@ -35,7 +37,7 @@ export const AllBookSlice= createSlice({
     }
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchAllBook.pending, (state, action) => {
+    builder.addCase(fetchAllBook.pending, (state,) => {
       state.status = 'loading'
     })
     builder.addCase(fetchAllBook.fulfilled, (state, action) => {
@@ -43,6 +45,8 @@ export const AllBookSlice= createSlice({
       state.status = 'ok'
     })
     builder.addCase(fetchAllBook.rejected, (state, action) => {
+      state.status = 'error'
+      state.error = action.error.message
       console.log("rejected", action.payload)
     });
   },

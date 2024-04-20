@@ -52,7 +52,7 @@ function App() {
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
-    dispatch(fetchAllBook())
+    dispatch(fetchAllBook(1))
   }, []);
 
   return (
